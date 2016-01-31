@@ -1,5 +1,8 @@
 angular.module('starter.services', ['ngResource'])
-.factory('Session', function ($resource) {
-    return $resource('http://localhost:5000/sessions/:sessionId');
-});
+.factory('Session', Session);
+
+Session.$inject = ['$resource']
+function Session ($resource) {
+    return $resource('http://localhost:5000/sessions/:sessionId')
+};
 
